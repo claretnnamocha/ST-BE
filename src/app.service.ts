@@ -66,7 +66,7 @@ export class AppService extends BaseService {
 
   async getAllBooks(): Promise<ServiceResponse> {
     try {
-      const books = await Book.findAll({ where: { deleteAt: null } });
+      const books = await Book.findAll({ where: { deletedAt: null } });
 
       return {
         statusCode: HttpStatus.OK,

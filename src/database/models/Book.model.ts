@@ -15,7 +15,6 @@ export class Book extends Model {
   })
   public id: string;
 
-  @IsUUID('4')
   @Column({ type: DataTypes.STRING })
   public title: string;
 

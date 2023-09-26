@@ -5,6 +5,7 @@ import {
   Get,
   Patch,
   Post,
+  Query,
   Res,
 } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
@@ -33,7 +34,7 @@ export class AppController extends BaseController {
   }
 
   @Get('book')
-  async getBook(@Res() response: Response, @Body() form: GetBook) {
+  async getBook(@Res() response: Response, @Query() form: GetBook) {
     const data = await this.appService.getBook(form);
     return this.response(response, data);
   }
@@ -44,7 +45,7 @@ export class AppController extends BaseController {
     return this.response(response, data);
   }
 
-  @Delete('book')
+  @Post('book/delete')
   async deleteBook(@Res() response: Response, @Body() form: GetBook) {
     const data = await this.appService.deleteBook(form);
     return this.response(response, data);
