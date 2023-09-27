@@ -7,7 +7,4 @@ export * as config from './config';
 export * as EMAIL_MESSAGES from './email-messages';
 export * as interfaces from './interfaces';
 export * as MESSAGES from './messages';
-export * as slack from './slack';
-
 export const logger = new Logger(displayName);
-
